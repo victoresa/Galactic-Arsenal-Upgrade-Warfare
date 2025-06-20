@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星际武装：升级之战 - Galactic Arsenal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="gameContainer">
+      <div id="ui">        <div id="hud">
+          <div id="score">得分: <span id="scoreValue">0</span></div>
+          <div id="lives">生命: <span id="livesValue">3</span></div>
+          <div id="level">等级: <span id="levelValue">1</span></div>
+          <div id="highScore">最高分: <span id="highScoreValue">0</span></div>
+        </div>        <div id="powerups">
+          <div id="shield" class="powerup">护盾: <span id="shieldValue">0</span></div>
+          <div id="weapon" class="powerup">武器: <span id="weaponValue">标准</span></div>
+          <div id="combo" class="powerup">连击: <span id="comboValue">0</span></div>
+        </div>        <div class="weapon-hint">
+          <div><span class="weapon-key">1</span>标准 <span class="weapon-key">2</span>激光 <span class="weapon-key">3</span>导弹</div>
+          <div><span class="weapon-key">4</span>散弹 <span class="weapon-key">5</span>等离子</div>
+          <div style="margin-top: 5px; font-size: 10px; opacity: 0.7;">
+            <span class="weapon-key">+/-</span>速度 <span class="weapon-key">0</span>重置
+          </div>
+        </div>
+        <div id="speedIndicator" class="speed-indicator">
+          速度: <span id="speedValue">1.0x</span>
+        </div>
+      </div>
+      <canvas id="gameCanvas"></canvas>
+      <div id="menu" class="screen">
+        <h1>星际武装：升级之战</h1>
+        <div class="menu-buttons">
+          <button id="startBtn" class="game-btn">开始游戏</button>
+          <button id="instructionsBtn" class="game-btn">游戏说明</button>
+          <button id="soundToggle" class="game-btn">音效: <span id="soundStatus">开启</span></button>
+        </div>
+      </div>
+      <div id="gameOverScreen" class="screen hidden">
+        <h2>游戏结束</h2>
+        <p>最终得分: <span id="finalScore">0</span></p>
+        <div class="menu-buttons">
+          <button id="restartBtn" class="game-btn">重新开始</button>
+          <button id="menuBtn" class="game-btn">返回菜单</button>
+        </div>
+      </div>
+      <div id="instructionsScreen" class="screen hidden">
+        <h2>游戏说明</h2>        <div class="instructions">
+          <p><strong>控制方式:</strong></p>
+          <p>WASD 或 方向键 - 移动飞船</p>
+          <p>空格键 - 射击</p>
+          <p>Shift - 加速</p>
+          <p>1-5 数字键 - 切换武器</p>
+          <br>          <p><strong>调试功能:</strong></p>
+          <p>+ 键 - 加速游戏 (最高2倍速)</p>
+          <p>- 键 - 减慢游戏 (最低0.1倍速)</p>
+          <p>0 键 - 重置游戏速度</p>
+          <br>
+          <p><strong>武器系统:</strong></p>
+          <p>1 - 标准武器 | 2 - 激光 | 3 - 导弹</p>
+          <p>4 - 散弹枪 | 5 - 等离子炮</p>
+          <br>
+          <p><strong>游戏目标:</strong></p>
+          <p>消灭敌人，击败Boss，收集能量球</p>
+          <p>建立连击提高分数，解锁成就！</p>
+          <p>小心陨石和Boss的攻击！</p>
+        </div>
+        <button id="backBtn" class="game-btn">返回</button>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
